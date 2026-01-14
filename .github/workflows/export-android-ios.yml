@@ -39,11 +39,11 @@ jobs:
 
     - name: Create comma-separated version
       run: |
-        cat artifacts/lista_numeros_spam.txt | sed '1 a pattern' -i > numeros_spam_dialer.txt
+        cat artifacts/lista_numeros_spam.txt | tr '\n' ',' | sed 's/,$//' > numeros_spam_dialer.txt
 
     - name: Create spam-blocker version
       run: |
-        cat artifacts/lista_numeros_spam.txt | tr '\n' ',' | sed 's/,$//' > numeros_spam_blocker.txt
+        cat artifacts/lista_numeros_spam.txt | sed '1 a pattern' -i > numeros_spam_blocker.txt
 
     - name: Create VCF file
       run: |
