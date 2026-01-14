@@ -43,7 +43,7 @@ jobs:
 
     - name: Create spam-blocker version
       run: |
-        cat artifacts/lista_numeros_spam.txt | sed '1 a pattern' -i > numeros_spam_blocker.txt
+        cat artifacts/lista_numeros_spam.txt | sed -i '1i pattern' > numeros_spam_blocker.txt
 
     - name: Create VCF file
       run: |
