@@ -27,6 +27,7 @@ jobs:
       uses: dawidd6/action-download-artifact@v11
       with:
         name: phone-numbers
+        allow_forks: true
         github_token: ${{ secrets.GITHUB_TOKEN }}
         workflow: scraper.yml
         path: artifacts
